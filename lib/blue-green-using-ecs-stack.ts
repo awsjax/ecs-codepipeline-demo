@@ -54,7 +54,11 @@ export class BlueGreenUsingEcsStack extends cdk.Stack {
         // CodeCommit repository for storing the source code
         const codeRepo = new codeCommit.Repository(this, "demoAppCodeRepo", {
             repositoryName: BlueGreenUsingEcsStack.ECS_APP_NAME,
-            description: "Demo application hosted on NGINX"
+            description: "Demo application hosted on NGINX",
+            env: {
+                account: '930547382058',
+                region: 'us-east-1'
+            }
         });
 
         // =============================================================================
